@@ -1,7 +1,7 @@
 import React from "react";
-import { useState } from "react";
+import {useState} from "react";
+import {TimeTable} from "./TimeTable";
 import "../styles/StopTimer.css";
-import { TimeTable } from "./TimeTable";
 
 export type StartStopText = "Start" | "Stop";
 export type TimeResetText = "Time" | "Reset";
@@ -22,7 +22,8 @@ function dateToTimeString(date: Date): string {
     return `${date.getMinutes().toString().padStart(2, "0")} : ${date.getSeconds().toString().padStart(2, "0")} . ${date.getMilliseconds().toString().substring(0, 2).padStart(2, "0")}`;
 }
 
-let stopCounting = () => { };
+let stopCounting = () => {
+};
 let lastTime = new Date(0);
 
 export function StopTimer() {
@@ -43,8 +44,7 @@ export function StopTimer() {
                 setTimeResetButton("Time");
                 setStartStopClass("btn mx-3 fixed-btn btn-danger")
                 return "Stop";
-            }
-            else {
+            } else {
                 setTimeResetButton("Reset");
                 setStartStopClass("btn mx-3 fixed-btn btn-primary");
                 return "Start";
@@ -68,10 +68,10 @@ export function StopTimer() {
     }
 
     return (
-        <div className="container-fluid blue-tint">
+        <div className="container-fluid">
             <div className='row justify-content-center'>
                 <div className="col-sm-12 col-md-8 px-2">
-                    <h1 className="display-4 mt-4 mb-2" style={{ "fontFamily": "monospace" }}>
+                    <h1 className="display-4 mt-4 mb-2" style={{"fontFamily": "monospace"}}>
                         {dateToTimeString(timeFace)}
                     </h1>
                     <div className="d-flex justify-content-center my-3">
@@ -86,8 +86,7 @@ export function StopTimer() {
                             {timeResetButton}
                         </button>
                     </div>
-                    <TimeTable laps={lapTimes} />
-                    {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure dolores, velit amet labore qui corrupti quaerat dicta neque nesciunt consequuntur.</p> */}
+                    <TimeTable laps={lapTimes}/>
                 </div>
             </div>
         </div>
