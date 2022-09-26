@@ -6,7 +6,7 @@ interface TimeTableProps {
 
 export function TimeTable({laps}: TimeTableProps) {
     return (
-        laps.length > 0 ? <div className="mx-5 px-5">
+        laps.length > 0 ? <div className="mx-5">
                 <table className="table">
                     <thead>
                     <tr>
